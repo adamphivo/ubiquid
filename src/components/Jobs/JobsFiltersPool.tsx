@@ -18,7 +18,7 @@ const appear = keyframes`
 `;
 
 const ButtonLabels = {
-  isRemoteFull: "Télétravail uniquement",
+  isRemoteFull: "Télétravail total",
   isRemotePartial: "Télétravail partiel",
   isRemotePonctual: "Télétravail regulier",
   isRemoteUnknown: "Télétravail non spécifié",
