@@ -10,7 +10,11 @@
     "preview": "vite preview"
   },
   "dependencies": {
+    "@emotion/react": "^11.11.1",
+    "@types/luxon": "^3.3.0",
+    "luxon": "^3.3.0",
     "react": "^18.2.0",
+    "react-awesome-reveal": "^4.2.3",
     "react-dom": "^18.2.0",
     "react-inlinesvg": "^3.0.2",
     "styled-components": "^6.0.0-rc.3"

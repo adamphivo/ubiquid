@@ -12,6 +12,9 @@ const Container = styled.div`
   align-items: center;
   padding-top: 23px;
   padding-bottom: 46px;
+  position: fixed;
+  top: 0;
+  left: 0;
 `;
 
 export default function Sidebar() {
