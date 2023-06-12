@@ -1,4 +1,5 @@
 import styled from "styled-components";
+import { capitalize } from "../../../utils/capitalize";
 import type { IJob } from "../../../types";
 
 interface Props {
@@ -40,7 +41,7 @@ export default function JobCardDetailsSummary({ job }: Props) {
   return (
     <Container>
       <span>
-        <Company>{job.company}</Company> - {job.city}
+        <Company>{capitalize(job.company)}</Company> - {job.city}
       </span>
       <Separator></Separator>
       <ContractType>{job.contractType}</ContractType>

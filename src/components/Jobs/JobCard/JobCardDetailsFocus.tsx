@@ -1,6 +1,7 @@
 import styled from "styled-components";
 import SVG from "react-inlinesvg";
 import { DateTime } from "luxon";
+import { capitalize } from "../../../utils/capitalize";
 import cityIcon from "../../../assets/imgs/icons/city.svg";
 import contractIcon from "../../../assets/imgs/icons/contract.svg";
 import dateIcon from "../../../assets/imgs/icons/date-start.svg";
@@ -49,7 +50,7 @@ export default function JobCardDetailsFocus({ job }: Props) {
       <DataContainer>
         <Icon src={cityIcon}></Icon>
         <DataLabel>
-          <Company>{job.company}</Company> - {job.city}
+          <Company>{capitalize(job.company)}</Company> - {job.city}
         </DataLabel>
       </DataContainer>
       {/* Contract */}

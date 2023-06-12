@@ -4,6 +4,7 @@ import JobCardStatus from "./JobCardStatus";
 import JobCardSalary from "./JobCardSalary";
 import JobCardDetailsSummary from "./JobCardDetailsSummary";
 import JobCardDateSummary from "./JobCardDateSummary";
+import { capitalize } from "../../../utils/capitalize";
 import type { IJob } from "../../../types";
 
 interface Props {
@@ -41,7 +42,7 @@ export default function JobCardSummary({ job }: Props) {
   return (
     <>
       <Container>
-        <JobCardBrandIcon company={job.company} />
+        <JobCardBrandIcon company={capitalize(job.company)} />
         <SubContainer>
           <Row>
             <JobCardStatus job={job}></JobCardStatus>

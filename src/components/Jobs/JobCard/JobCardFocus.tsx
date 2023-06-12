@@ -8,6 +8,7 @@ import JobCardDetailsFocus from "./JobCardDetailsFocus";
 import JobCardDateSummary from "./JobCardDateSummary";
 import JobCardAbout from "./JobCardAbout";
 import JobCardApplyButton from "./JobCardApplyButton";
+import { capitalize } from "../../../utils/capitalize";
 import type { IJob } from "../../../types";
 
 interface Props {
@@ -52,7 +53,7 @@ export default function JobCardFocus({ job }: Props) {
   return (
     <Container>
       <TopContainer>
-        <JobCardBrandIcon company={job.company}></JobCardBrandIcon>
+        <JobCardBrandIcon company={capitalize(job.company)}></JobCardBrandIcon>
         <SubContainer>
           <Row>
             <JobCardStatus job={job}></JobCardStatus>
