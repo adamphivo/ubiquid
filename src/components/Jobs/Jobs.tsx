@@ -77,7 +77,7 @@ export default function Jobs() {
           return Date.parse(b.publishDate) - Date.parse(a.publishDate);
         }
         case "salary": {
-          return a.salary - b.salary;
+          return b.salary - a.salary;
         }
       }
     });
