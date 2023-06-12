@@ -14,3 +14,21 @@ export interface IJob {
   startDate: string;
   publishDate: string;
 }
+
+export interface IFilters {
+  isBack: boolean;
+  isFront: boolean;
+  isFullstack: boolean;
+  isPO: boolean;
+  isCDD: boolean;
+  isCDI: boolean;
+  isInternship: boolean;
+  isApprenticeship: boolean;
+  isRemotePartial: boolean;
+  isRemotePonctual: boolean;
+  isRemoteFull: boolean;
+  isRemoteUnknown: boolean;
+  isRemoteNone: boolean;
+}
+
+export type Sort = "date" | "salary";

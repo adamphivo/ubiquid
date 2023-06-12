@@ -9,6 +9,7 @@ const Container = styled.div`
   justify-content: end;
   align-items: center;
   gap: 24px;
+  margin-bottom: 32px;
 `;
 
 export default function Topbar() {
