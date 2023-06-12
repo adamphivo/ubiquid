@@ -1,0 +1,17 @@
+/* Fonts */
+@import url("https://fonts.googleapis.com/css2?family=Work+Sans:wght@500&display=swap");
+
+/* Variables */
+:root {
+  /* Fonts */
+  --font-main: "Work Sans", sans-serif;
+  /* Colors */
+  --color-primary: #7650e0;
+  --color-background: #f4f5f9;
+  /* Sizing */
+}
+
+html {
+  font-family: var(--font-main);
+  background-color: var(--color-background);
+}
