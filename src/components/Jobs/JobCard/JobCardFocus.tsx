@@ -1,4 +1,5 @@
 import styled from "styled-components";
+import { Fade } from "react-awesome-reveal";
 import JobCardBrandIcon from "./JobCardBrandIcon";
 import JobCardStatus from "./JobCardStatus";
 import JobCardSalary from "./JobCardSalary";
@@ -59,17 +60,19 @@ export default function JobCardFocus({ job }: Props) {
           </Row>
         </SubContainer>
       </TopContainer>
-      <Row>
-        <JobCardDetailsFocus job={job}></JobCardDetailsFocus>
-        <JobCardDateSummary job={job} isLong={true}></JobCardDateSummary>
-      </Row>
-      <Row>
-        <JobCardAbout job={job}></JobCardAbout>
-      </Row>
-      <Row>
-        <div></div>
-        <JobCardApplyButton job={job}></JobCardApplyButton>
-      </Row>
+      <Fade direction="down" cascade>
+        <Row>
+          <JobCardDetailsFocus job={job}></JobCardDetailsFocus>
+          <JobCardDateSummary job={job} isLong={true}></JobCardDateSummary>
+        </Row>
+        <Row>
+          <JobCardAbout job={job}></JobCardAbout>
+        </Row>
+        <Row>
+          <div></div>
+          <JobCardApplyButton job={job}></JobCardApplyButton>
+        </Row>
+      </Fade>
     </Container>
   );
 }
