@@ -10,6 +10,7 @@ const IconContainer = styled.div`
   justify-content: center;
   align-items: center;
   width: 76px;
+  min-width: 76px;
   height: 76px;
 `;
 

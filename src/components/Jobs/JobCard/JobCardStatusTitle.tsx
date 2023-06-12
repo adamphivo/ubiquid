@@ -8,6 +8,7 @@ interface Props {
 const Title = styled.div`
   color: var(--color-black);
   font-size: 18px;
+  font-weight: 500;
 `;
 
 export default function JobCardStatusTitle({ job }: Props) {

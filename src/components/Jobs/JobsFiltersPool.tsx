@@ -82,14 +82,14 @@ export default function JobsFiltersPool({ filters, setFilters }: Props) {
   const filtersComponents = Object.keys(filters).map((item) => {
     if (filters[item as keyof IFilters]) {
       return (
-        <>
+        <div key={item}>
           <Button onClick={() => setFilters({ ...filters, [item as keyof IFilters]: false })}>
             <ButtonLabel>{ButtonLabels[item as keyof IFilters]}</ButtonLabel>
             <IconContainer>
               <Icon src={crossIcon}></Icon>
             </IconContainer>
           </Button>
-        </>
+        </div>
       );
     }
   });

@@ -16,6 +16,8 @@ const Container = styled.div`
   padding: 20px;
   border-radius: 10px;
   align-items: center;
+  border: 1px solid transparent;
+  transition-duration: 0.3s;
 `;
 
 const SubContainer = styled.div`
@@ -44,7 +46,7 @@ export default function JobCardSummary({ job }: Props) {
           </Row>
           <Row>
             <JobCardDetailsSummary job={job}></JobCardDetailsSummary>
-            <JobCardDateSummary job={job}></JobCardDateSummary>
+            <JobCardDateSummary isLong={false} job={job}></JobCardDateSummary>
           </Row>
         </SubContainer>
       </Container>

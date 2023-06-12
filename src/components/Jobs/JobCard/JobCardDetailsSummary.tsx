@@ -32,11 +32,15 @@ const Separator = styled.span`
   }
 `;
 
+const Company = styled.span`
+  text-transform: capitalize;
+`;
+
 export default function JobCardDetailsSummary({ job }: Props) {
   return (
     <Container>
       <span>
-        {job.company} - {job.city}
+        <Company>{job.company}</Company> - {job.city}
       </span>
       <Separator></Separator>
       <ContractType>{job.contractType}</ContractType>
