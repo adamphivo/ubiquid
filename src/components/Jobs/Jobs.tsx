@@ -35,26 +35,30 @@ export default function Jobs() {
   const [jobs, setJobs] = useState<IJob[]>([]);
 
   useEffect(() => {
-    const filteredJobs: IJob[] = jobsData.filter((job) => {
-      if (filters.isApprenticeship && job.contractType === "alternance") return true;
-      if (filters.isInternship && job.contractType === "stage") return true;
-      if (filters.isCDD && job.contractType === "cdd") return true;
-      if (filters.isCDI && job.contractType === "cdi") return true;
-      if (filters.isPO && job.jobTitle === "manager") return job;
-      if (filters.isFullstack && job.jobTitle === "fullstack") return true;
-      if (filters.isBack && job.jobTitle === "backend") return true;
-      if (filters.isFront && job.jobTitle === "frontend") return true;
-      if (filters.isRemoteNone && job.remoteWork === "none") return true;
-      if (filters.isRemoteUnknown && job.remoteWork === "unknown") return true;
-      if (filters.isRemotePartial && job.remoteWork === "regularly") return true;
-      if (filters.isRemoteFull && job.remoteWork === "full") return true;
-      if (filters.isRemotePonctual && job.remoteWork === "eventually") return true;
-    });
+    const filteredJobs: IJob[] =
+      JSON.stringify(filters) === JSON.stringify(BaseFilters)
+        ? []
+        : jobsData.filter((job) => {
+            if (filters.isApprenticeship && job.contractType !== "alternance") return false;
+            if (filters.isInternship && job.contractType !== "stage") return false;
+            if (filters.isCDD && job.contractType !== "cdd") return false;
+            if (filters.isCDI && job.contractType !== "cdi") return false;
+            if (filters.isPO && job.jobTitle !== "manager") return false;
+            if (filters.isFullstack && job.jobTitle !== "fullstack") return false;
+            if (filters.isBack && job.jobTitle !== "backend") return false;
+            if (filters.isFront && job.jobTitle !== "frontend") return false;
+            if (filters.isRemoteNone && job.remoteWork !== "none") return false;
+            if (filters.isRemoteUnknown && job.remoteWork !== "unknown") return false;
+            if (filters.isRemotePartial && job.remoteWork !== "regularly") return false;
+            if (filters.isRemoteFull && job.remoteWork !== "full") return false;
+            if (filters.isRemotePonctual && job.remoteWork !== "eventually") return false;
+            return true;
+          });
 
     filteredJobs.sort((a, b) => {
       switch (sort) {
         case "date": {
-          return Date.parse(a.publishDate) - Date.parse(b.publishDate);
+          return Date.parse(b.publishDate) - Date.parse(a.publishDate);
         }
         case "salary": {
           return a.salary - b.salary;

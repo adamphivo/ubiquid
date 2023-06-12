@@ -49,23 +49,23 @@ export default function JobsFilterSortBarFilters({ filters, setFilters }: Props)
       {/* Remote type */}
       <div>
         <label>
-          Teletravail complet
+          Télétravail complet
           <input type="checkbox" checked={filters.isRemoteFull ? true : false} onChange={() => setFilters({ ...filters, isRemoteFull: !filters.isRemoteFull })} />
         </label>
         <label>
-          Pas de teletravail
+          Pas de Télétravail
           <input type="checkbox" checked={filters.isRemoteNone ? true : false} onChange={() => setFilters({ ...filters, isRemoteNone: !filters.isRemoteNone })} />
         </label>
         <label>
-          Teletravail partiel
+          Télétravail partiel
           <input type="checkbox" checked={filters.isRemotePartial ? true : false} onChange={() => setFilters({ ...filters, isRemotePartial: !filters.isRemotePartial })} />
         </label>
         <label>
-          Teletravail ponctuel
+          Télétravail ponctuel
           <input type="checkbox" checked={filters.isRemotePonctual ? true : false} onChange={() => setFilters({ ...filters, isRemotePonctual: !filters.isRemotePonctual })} />
         </label>
         <label>
-          Non specifie
+          Non spécifié
           <input type="checkbox" checked={filters.isRemoteUnknown ? true : false} onChange={() => setFilters({ ...filters, isRemoteUnknown: !filters.isRemoteUnknown })} />
         </label>
       </div>
