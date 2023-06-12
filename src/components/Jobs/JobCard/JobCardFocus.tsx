@@ -60,7 +60,7 @@ export default function JobCardFocus({ job }: Props) {
           </Row>
         </SubContainer>
       </TopContainer>
-      <Fade direction="down" cascade>
+      <Fade direction="down" cascade triggerOnce>
         <Row>
           <JobCardDetailsFocus job={job}></JobCardDetailsFocus>
           <JobCardDateSummary job={job} isLong={true}></JobCardDateSummary>
