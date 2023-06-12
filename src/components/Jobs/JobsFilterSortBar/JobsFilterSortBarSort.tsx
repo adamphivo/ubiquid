@@ -127,11 +127,11 @@ export default function JobsFilterSortBarSort({ sort, setSort }: Props) {
         </DropDownButton>
         {/* Options */}
         <OptionsContainer className={isActive ? "active" : ""}>
-          <Option className={sort === "date" ? "active" : ""}>
-            <span onClick={() => setSort("date")}>Par Date</span>
+          <Option onClick={() => setSort("date")} className={sort === "date" ? "active" : ""}>
+            <span>Par Date</span>
           </Option>
-          <Option className={sort === "salary" ? "active" : ""}>
-            <span onClick={() => setSort("salary")}>Par Salaire</span>
+          <Option onClick={() => setSort("salary")} className={sort === "salary" ? "active" : ""}>
+            <span>Par Salaire</span>
           </Option>
         </OptionsContainer>
       </DropDownContainer>
