@@ -15,6 +15,15 @@ npm run dev
 - React.js (Framework front)
 - Vite (Bundler)
 - Vercel (Deployment)
+- StyledComponents (CSS-in-JS)
+
+## Folders structure
+
+- /src
+  - /assets -> public assets & data
+  - /components -> React components separated by features
+  - /types -> TypeScript types
+  - /utils -> Various lib tools & functions
 
 ## Deployment
 
