@@ -6,7 +6,7 @@ interface Props {
 }
 
 const RemoteTag = styled.div`
-  padding: 2px 10px;
+  padding: 7px 10px;
   border-radius: 10px;
   font-size: 16px;
   font-weight: 400;

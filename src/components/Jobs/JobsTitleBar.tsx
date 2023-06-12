@@ -11,6 +11,7 @@ const Container = styled.div`
 const Title = styled.h1`
   font-size: 24px;
   color: var(--color-black);
+  font-weight: 500;
 `;
 const PrintButton = styled.button`
   box-shadow: 0px 4px 13px rgba(67, 67, 67, 0.2);

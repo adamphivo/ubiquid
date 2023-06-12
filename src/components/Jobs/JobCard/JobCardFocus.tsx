@@ -22,6 +22,9 @@ const Container = styled.div`
   flex-direction: column;
   gap: 26px;
   border: 1px solid var(--color-primary);
+  &:hover {
+    cursor: pointer;
+  }
 `;
 
 const TopContainer = styled.div`
