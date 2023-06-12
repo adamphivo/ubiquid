@@ -27,8 +27,8 @@ const ButtonLabels = {
   isCDD: "CDD",
   isInternship: "Stage",
   isApprenticeship: "Alternance",
-  isFront: "Dev Front",
-  isBack: "Dev Back",
+  isFront: "Dev Frontend",
+  isBack: "Dev Backend",
   isFullstack: "Dev Fullstack",
   isPO: "Manager",
 };
@@ -56,7 +56,7 @@ const Button = styled.button`
   color: var(--color-black);
   border: 1px solid var(--color-primary);
   border-radius: 38px;
-  padding: 4px 16px;
+  padding: 8px 16px;
   display: flex;
   align-items: center;
   gap: 20px;
@@ -76,6 +76,8 @@ const ButtonsContainer = styled.div`
   gap: 10px;
   min-height: 37px;
   width: 100%;
+  margin-top: 20px;
+  margin-bottom: 40px;
 `;
 
 export default function JobsFiltersPool({ filters, setFilters }: Props) {

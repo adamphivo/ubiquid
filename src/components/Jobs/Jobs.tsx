@@ -16,6 +16,22 @@ const Container = styled.main`
 const BaseFilters: IFilters = {
   isBack: false,
   isFront: false,
+  isFullstack: true,
+  isPO: false,
+  isCDD: false,
+  isCDI: false,
+  isInternship: false,
+  isApprenticeship: false,
+  isRemotePartial: false,
+  isRemotePonctual: false,
+  isRemoteFull: false,
+  isRemoteUnknown: false,
+  isRemoteNone: false,
+};
+
+const EmptyFilters: IFilters = {
+  isBack: false,
+  isFront: false,
   isFullstack: false,
   isPO: false,
   isCDD: false,
@@ -36,7 +52,7 @@ export default function Jobs() {
 
   useEffect(() => {
     const filteredJobs: IJob[] =
-      JSON.stringify(filters) === JSON.stringify(BaseFilters)
+      JSON.stringify(filters) === JSON.stringify(EmptyFilters)
         ? []
         : jobsData.filter((job) => {
             if (filters.isApprenticeship && job.contractType !== "alternance") return false;

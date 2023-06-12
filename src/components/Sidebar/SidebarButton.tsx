@@ -7,34 +7,44 @@ interface Props {
   isActive: boolean;
 }
 
-export default function SidebarButton(props: Props) {
-  const Button = styled.button`
-    display: flex;
-    gap: 20px;
-    align-items: center;
-    padding: 20px;
-    border-radius: 20px;
-    background: ${props.isActive ? "white" : "inherit"};
-    color: ${props.isActive ? "#0e0e2c" : "white"};
-    border: none;
-  `;
+const Button = styled.button`
+  display: flex;
+  gap: 20px;
+  align-items: center;
+  padding: 20px;
+  border-radius: 20px;
+  background: inherit;
+  color: white;
 
-  const Label = styled.p`
-    font-size: 18px;
-  `;
+  &.active {
+    background: white;
+    color: var(--color-black);
+  }
+  border: none;
+`;
 
-  const Icon = styled(SVG)`
-    width: 24px;
-    height: 24px;
+const Label = styled.p`
+  font-size: 18px;
+`;
+
+const Icon = styled(SVG)`
+  width: 24px;
+  height: 24px;
+  & path {
+    fill: white;
+  }
+  &.active {
     & path {
-      fill: ${props.isActive ? "#7650E0" : "white"};
+      fill: #7650e0;
     }
-  `;
+  }
+`;
 
+export default function SidebarButton(props: Props) {
   return (
     <>
-      <Button>
-        <Icon src={props.src}></Icon>
+      <Button className={props.isActive ? "active" : ""}>
+        <Icon src={props.src} className={props.isActive ? "active" : ""}></Icon>
         <Label>{props.label}</Label>
       </Button>
     </>

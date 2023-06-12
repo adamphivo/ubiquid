@@ -1,5 +1,4 @@
 import styled from "styled-components";
-import { Slide } from "react-awesome-reveal";
 import JobCard from "./JobCard/JobCard";
 import type { IJob } from "../../types";
 
@@ -18,11 +17,7 @@ export default function JobsCards({ jobs }: Props) {
 
   return (
     <>
-      <Container>
-        <Slide direction="up" damping={0} cascade triggerOnce>
-          {JobsComponents}
-        </Slide>
-      </Container>
+      <Container>{JobsComponents}</Container>
     </>
   );
 }

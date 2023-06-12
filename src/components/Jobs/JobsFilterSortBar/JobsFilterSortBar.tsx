@@ -13,6 +13,7 @@ interface Props {
 const Container = styled.div`
   display: flex;
   justify-content: space-between;
+  align-items: center;
 `;
 
 export default function JobsFilterSortBar({ filters, sort, handleFilters, handleSort }: Props) {
