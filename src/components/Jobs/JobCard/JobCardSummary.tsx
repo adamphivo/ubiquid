@@ -18,7 +18,6 @@ const Container = styled.div`
   border-radius: 10px;
   align-items: center;
   border: 1px solid transparent;
-  transition-duration: 0.3s;
   &:hover {
     cursor: pointer;
   }

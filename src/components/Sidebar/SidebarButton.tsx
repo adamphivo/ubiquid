@@ -15,6 +15,13 @@ const Button = styled.button`
   border-radius: 20px;
   background: inherit;
   color: white;
+  font-weight: 500;
+  width: 100%;
+  min-width: 187px;
+
+  &:hover {
+    cursor: pointer;
+  }
 
   &.active {
     background: white;

@@ -4,7 +4,7 @@ import homeIcon from "../../assets/imgs/icons/home.svg";
 import jobIcon from "../../assets/imgs/icons/job.svg";
 import messageIcon from "../../assets/imgs/icons/message.svg";
 
-const Navigation = styled.nav`
+const Navigation = styled.ul`
   margin-top: 100px;
   display: flex;
   flex-direction: column;
@@ -14,11 +14,19 @@ const Navigation = styled.nav`
 export default function SidebarNavigation() {
   return (
     <>
-      <Navigation>
-        <SidebarButton src={homeIcon} label={"Acceuil"} isActive={false}></SidebarButton>
-        <SidebarButton src={jobIcon} label={"Les jobs"} isActive={true}></SidebarButton>
-        <SidebarButton src={messageIcon} label={"Messages"} isActive={false}></SidebarButton>
-      </Navigation>
+      <nav>
+        <Navigation>
+          <li>
+            <SidebarButton src={homeIcon} label={"Accueil"} isActive={false}></SidebarButton>
+          </li>
+          <li>
+            <SidebarButton src={jobIcon} label={"Les jobs"} isActive={true}></SidebarButton>
+          </li>
+          <li>
+            <SidebarButton src={messageIcon} label={"Messages"} isActive={false}></SidebarButton>
+          </li>
+        </Navigation>
+      </nav>
     </>
   );
 }

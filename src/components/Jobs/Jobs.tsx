@@ -11,6 +11,7 @@ const Container = styled.main`
   width: 100%;
   display: flex;
   flex-direction: column;
+  min-height: 50vh;
 `;
 
 const BaseFilters: IFilters = {
@@ -29,47 +30,28 @@ const BaseFilters: IFilters = {
   isRemoteNone: false,
 };
 
-const EmptyFilters: IFilters = {
-  isBack: false,
-  isFront: false,
-  isFullstack: false,
-  isPO: false,
-  isCDD: false,
-  isCDI: false,
-  isInternship: false,
-  isApprenticeship: false,
-  isRemotePartial: false,
-  isRemotePonctual: false,
-  isRemoteFull: false,
-  isRemoteUnknown: false,
-  isRemoteNone: false,
-};
-
 export default function Jobs() {
   const [filters, setFilters] = useState<IFilters>(BaseFilters);
   const [sort, setSort] = useState<Sort>("date");
   const [jobs, setJobs] = useState<IJob[]>([]);
 
   useEffect(() => {
-    const filteredJobs: IJob[] =
-      JSON.stringify(filters) === JSON.stringify(EmptyFilters)
-        ? []
-        : jobsData.filter((job) => {
-            if (filters.isApprenticeship && job.contractType !== "alternance") return false;
-            if (filters.isInternship && job.contractType !== "stage") return false;
-            if (filters.isCDD && job.contractType !== "cdd") return false;
-            if (filters.isCDI && job.contractType !== "cdi") return false;
-            if (filters.isPO && job.jobTitle !== "manager") return false;
-            if (filters.isFullstack && job.jobTitle !== "fullstack") return false;
-            if (filters.isBack && job.jobTitle !== "backend") return false;
-            if (filters.isFront && job.jobTitle !== "frontend") return false;
-            if (filters.isRemoteNone && job.remoteWork !== "none") return false;
-            if (filters.isRemoteUnknown && job.remoteWork !== "unknown") return false;
-            if (filters.isRemotePartial && job.remoteWork !== "regularly") return false;
-            if (filters.isRemoteFull && job.remoteWork !== "full") return false;
-            if (filters.isRemotePonctual && job.remoteWork !== "eventually") return false;
-            return true;
-          });
+    const filteredJobs: IJob[] = jobsData.filter((job) => {
+      if (filters.isApprenticeship && job.contractType !== "alternance") return false;
+      if (filters.isInternship && job.contractType !== "stage") return false;
+      if (filters.isCDD && job.contractType !== "cdd") return false;
+      if (filters.isCDI && job.contractType !== "cdi") return false;
+      if (filters.isPO && job.jobTitle !== "manager") return false;
+      if (filters.isFullstack && job.jobTitle !== "fullstack") return false;
+      if (filters.isBack && job.jobTitle !== "backend") return false;
+      if (filters.isFront && job.jobTitle !== "frontend") return false;
+      if (filters.isRemoteNone && job.remoteWork !== "none") return false;
+      if (filters.isRemoteUnknown && job.remoteWork !== "unknown") return false;
+      if (filters.isRemotePartial && job.remoteWork !== "regularly") return false;
+      if (filters.isRemoteFull && job.remoteWork !== "full") return false;
+      if (filters.isRemotePonctual && job.remoteWork !== "eventually") return false;
+      return true;
+    });
 
     filteredJobs.sort((a, b) => {
       switch (sort) {
