@@ -92,6 +92,10 @@ const IconContainer = styled.div`
   background-color: var(--color-primary-lighter);
 `;
 
+const CheckBox = styled.input`
+  accent-color: var(--color-primary);
+`;
+
 interface FilterSelectorStatus {
   isTypeOpen: boolean;
   isContractOpen: boolean;
@@ -128,19 +132,19 @@ export default function JobsFilterSortBarFilters({ filters, setFilters }: Props)
         {/* Options */}
         <OptionsContainer className={filterStatus.isTypeOpen ? "active" : ""}>
           <Option>
-            <input type="checkbox" checked={filters.isFront ? true : false} onChange={() => setFilters({ ...filters, isFront: !filters.isFront, isBack: false, isFullstack: false, isPO: false })} />
+            <CheckBox type="checkbox" checked={filters.isFront ? true : false} onChange={() => setFilters({ ...filters, isFront: !filters.isFront, isBack: false, isFullstack: false, isPO: false })} />
             <span>Frontend</span>
           </Option>
           <Option>
-            <input type="checkbox" checked={filters.isBack ? true : false} onChange={() => setFilters({ ...filters, isBack: !filters.isBack, isFront: false, isFullstack: false, isPO: false })} />
+            <CheckBox type="checkbox" checked={filters.isBack ? true : false} onChange={() => setFilters({ ...filters, isBack: !filters.isBack, isFront: false, isFullstack: false, isPO: false })} />
             <span>Backend</span>
           </Option>
           <Option>
-            <input type="checkbox" checked={filters.isFullstack ? true : false} onChange={() => setFilters({ ...filters, isFullstack: !filters.isFullstack, isBack: false, isFront: false, isPO: false })} />
+            <CheckBox type="checkbox" checked={filters.isFullstack ? true : false} onChange={() => setFilters({ ...filters, isFullstack: !filters.isFullstack, isBack: false, isFront: false, isPO: false })} />
             <span>Fullstack</span>
           </Option>
           <Option>
-            <input type="checkbox" checked={filters.isPO ? true : false} onChange={() => setFilters({ ...filters, isPO: !filters.isPO, isFront: false, isBack: false, isFullstack: false })} />
+            <CheckBox type="checkbox" checked={filters.isPO ? true : false} onChange={() => setFilters({ ...filters, isPO: !filters.isPO, isFront: false, isBack: false, isFullstack: false })} />
             <span>Manager</span>
           </Option>
         </OptionsContainer>
@@ -164,19 +168,19 @@ export default function JobsFilterSortBarFilters({ filters, setFilters }: Props)
         {/* Options */}
         <OptionsContainer className={filterStatus.isContractOpen ? "active" : ""}>
           <Option>
-            <input type="checkbox" checked={filters.isCDI ? true : false} onChange={() => setFilters({ ...filters, isCDI: !filters.isCDI, isCDD: false, isInternship: false, isApprenticeship: false })} />
+            <CheckBox type="checkbox" checked={filters.isCDI ? true : false} onChange={() => setFilters({ ...filters, isCDI: !filters.isCDI, isCDD: false, isInternship: false, isApprenticeship: false })} />
             <span>CDI</span>
           </Option>
           <Option>
-            <input type="checkbox" checked={filters.isCDD ? true : false} onChange={() => setFilters({ ...filters, isCDD: !filters.isCDD, isCDI: false, isInternship: false, isApprenticeship: false })} />
+            <CheckBox type="checkbox" checked={filters.isCDD ? true : false} onChange={() => setFilters({ ...filters, isCDD: !filters.isCDD, isCDI: false, isInternship: false, isApprenticeship: false })} />
             <span>CDD</span>
           </Option>
           <Option>
-            <input type="checkbox" checked={filters.isInternship ? true : false} onChange={() => setFilters({ ...filters, isInternship: !filters.isInternship, isCDD: false, isCDI: false, isApprenticeship: false })} />
+            <CheckBox type="checkbox" checked={filters.isInternship ? true : false} onChange={() => setFilters({ ...filters, isInternship: !filters.isInternship, isCDD: false, isCDI: false, isApprenticeship: false })} />
             <span>Stage</span>
           </Option>
           <Option>
-            <input
+            <CheckBox
               type="checkbox"
               checked={filters.isApprenticeship ? true : false}
               onChange={() => setFilters({ ...filters, isApprenticeship: !filters.isApprenticeship, isCDD: false, isCDI: false, isInternship: false })}
@@ -204,7 +208,7 @@ export default function JobsFilterSortBarFilters({ filters, setFilters }: Props)
         {/* Options */}
         <OptionsContainer className={filterStatus.isRemoteOpen ? "active" : ""}>
           <Option>
-            <input
+            <CheckBox
               type="checkbox"
               checked={filters.isRemoteFull ? true : false}
               onChange={() => setFilters({ ...filters, isRemoteFull: !filters.isRemoteFull, isRemotePartial: false, isRemoteNone: false, isRemotePonctual: false, isRemoteUnknown: false })}
@@ -212,7 +216,7 @@ export default function JobsFilterSortBarFilters({ filters, setFilters }: Props)
             <span>Télétravail total</span>
           </Option>
           <Option>
-            <input
+            <CheckBox
               type="checkbox"
               checked={filters.isRemotePartial ? true : false}
               onChange={() => setFilters({ ...filters, isRemotePartial: !filters.isRemotePartial, isRemoteFull: false, isRemoteNone: false, isRemotePonctual: false, isRemoteUnknown: false })}
@@ -220,7 +224,7 @@ export default function JobsFilterSortBarFilters({ filters, setFilters }: Props)
             <span>Télétravail partiel</span>
           </Option>
           <Option>
-            <input
+            <CheckBox
               type="checkbox"
               checked={filters.isRemotePonctual ? true : false}
               onChange={() => setFilters({ ...filters, isRemotePonctual: !filters.isRemotePonctual, isRemoteFull: false, isRemoteNone: false, isRemotePartial: false, isRemoteUnknown: false })}
@@ -228,7 +232,7 @@ export default function JobsFilterSortBarFilters({ filters, setFilters }: Props)
             <span>Télétravail ponctuel</span>
           </Option>
           <Option>
-            <input
+            <CheckBox
               type="checkbox"
               checked={filters.isRemoteNone ? true : false}
               onChange={() => setFilters({ ...filters, isRemoteNone: !filters.isRemoteNone, isRemoteFull: false, isRemotePartial: false, isRemotePonctual: false, isRemoteUnknown: false })}
@@ -236,7 +240,7 @@ export default function JobsFilterSortBarFilters({ filters, setFilters }: Props)
             <span>Pas de Télétravail</span>
           </Option>
           <Option>
-            <input
+            <CheckBox
               type="checkbox"
               checked={filters.isRemoteUnknown ? true : false}
               onChange={() => setFilters({ ...filters, isRemoteUnknown: !filters.isRemoteUnknown, isRemoteFull: false, isRemoteNone: false, isRemotePartial: false, isRemotePonctual: false })}

@@ -96,9 +96,5 @@ export default function JobsFiltersPool({ filters, setFilters }: Props) {
     }
   });
 
-  return (
-    <>
-      <ButtonsContainer>{filtersComponents}</ButtonsContainer>
-    </>
-  );
+  return <>{filtersComponents.length && <ButtonsContainer>{filtersComponents}</ButtonsContainer>}</>;
 }
