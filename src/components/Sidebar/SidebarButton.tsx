@@ -15,7 +15,7 @@ export default function SidebarButton(props: Props) {
     padding: 20px;
     border-radius: 20px;
     background: ${props.isActive ? "white" : "inherit"};
-    color: ${props.isActive ? "#7650E0" : "white"};
+    color: ${props.isActive ? "#0e0e2c" : "white"};
     border: none;
   `;
 
